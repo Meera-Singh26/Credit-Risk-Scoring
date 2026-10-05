@@ -1,0 +1,40 @@
+name: CI
+on:
+  push: {branches: [main]}
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: {python: ["3.10", "3.12"]}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "${{ matrix.python }}", cache: pip}
+      - run: pip install -r requirements-dev.txt
+      - run: ruff check .
+      - run: python -m credit_risk.eda
+        env: {PYTHONPATH: src}
+      - run: python -m credit_risk.train --fast
+        env: {PYTHONPATH: src}
+      - run: python -m pytest -q
+      - run: python scripts/simulate_traffic.py --drift --reset | head -3
+      - uses: actions/upload-artifact@v4
+        if: matrix.python == '3.12'
+        with:
+          name: model-reports
+          path: |
+            reports/MODEL_CARD.md
+            reports/metrics.json
+            reports/fairness.json
+            reports/figures
+  docker:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t credit-risk:ci .
+      - run: |
+          docker run -d -p 8000:8000 --name api credit-risk:ci
+          for i in $(seq 1 20); do curl -sf localhost:8000/health && break || sleep 2; done
+          curl -sf -X POST localhost:8000/score -H 'content-type: application/json' -d @example_request.json

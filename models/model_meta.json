@@ -1,0 +1,120 @@
+{
+  "version": "20261005-063049-ac003d",
+  "trained_at": "2026-10-05T06:30:49+00:00",
+  "data_sha256_12": "ac003d1158e4",
+  "model_name": "random_forest",
+  "threshold": 0.16999999999999998,
+  "n_train": 800,
+  "n_test": 200,
+  "excluded_protected_features": [
+    "personal_status_sex",
+    "foreign_worker"
+  ],
+  "env": {
+    "python": "3.13.9",
+    "sklearn": "1.7.2",
+    "xgboost": "3.4.1"
+  },
+  "categories": {
+    "status": [
+      "... < 100 DM",
+      "... >= 200 DM / salary for at least 1 year",
+      "0 <= ... < 200 DM",
+      "no checking account"
+    ],
+    "credit_history": [
+      "all credits at this bank paid back duly",
+      "critical account/other credits existing",
+      "delay in paying off in the past",
+      "existing credits paid back duly till now",
+      "no credits taken/all credits paid back duly"
+    ],
+    "purpose": [
+      "business",
+      "car (new)",
+      "car (used)",
+      "domestic appliances",
+      "education",
+      "furniture/equipment",
+      "others",
+      "radio/television",
+      "repairs",
+      "retraining"
+    ],
+    "savings": [
+      "... < 100 DM",
+      "... >= 1000 DM",
+      "100 <= ... < 500 DM",
+      "500 <= ... < 1000 DM",
+      "unknown/no savings account"
+    ],
+    "employment_duration": [
+      "... < 1 year",
+      "... >= 7 years",
+      "1 <= ... < 4 years",
+      "4 <= ... < 7 years",
+      "unemployed"
+    ],
+    "other_debtors": [
+      "co-applicant",
+      "guarantor",
+      "none"
+    ],
+    "property": [
+      "building society savings agreement/life insurance",
+      "car or other",
+      "real estate",
+      "unknown/no property"
+    ],
+    "other_installment_plans": [
+      "bank",
+      "none",
+      "stores"
+    ],
+    "housing": [
+      "for free",
+      "own",
+      "rent"
+    ],
+    "job": [
+      "management/self-employed/highly qualified employee/officer",
+      "skilled employee/official",
+      "unemployed/unskilled - non-resident",
+      "unskilled - resident"
+    ],
+    "telephone": [
+      "no",
+      "yes"
+    ]
+  },
+  "numeric_ranges": {
+    "duration": [
+      4.0,
+      72.0
+    ],
+    "amount": [
+      250.0,
+      18424.0
+    ],
+    "installment_rate": [
+      1.0,
+      4.0
+    ],
+    "present_residence": [
+      1.0,
+      4.0
+    ],
+    "age": [
+      19.0,
+      75.0
+    ],
+    "number_credits": [
+      1.0,
+      4.0
+    ],
+    "people_liable": [
+      1.0,
+      2.0
+    ]
+  }
+}

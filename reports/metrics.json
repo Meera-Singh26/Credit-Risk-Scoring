@@ -1,0 +1,48 @@
+{
+  "selected_model": "random_forest",
+  "version": "20261005-063049-ac003d",
+  "leaderboard": {
+    "random_forest": {
+      "cv_auc": 0.7959,
+      "cv_auc_std": 0.0324,
+      "cv_pr_auc": 0.6322,
+      "cv_brier": 0.1684
+    },
+    "xgboost": {
+      "cv_auc": 0.7893,
+      "cv_auc_std": 0.0313,
+      "cv_pr_auc": 0.6177,
+      "cv_brier": 0.1643
+    },
+    "logreg": {
+      "cv_auc": 0.7719,
+      "cv_auc_std": 0.0453,
+      "cv_pr_auc": 0.5964,
+      "cv_brier": 0.1709
+    }
+  },
+  "test": {
+    "roc_auc": 0.802,
+    "roc_auc_ci95": [
+      0.7324,
+      0.869
+    ],
+    "gini": 0.604,
+    "pr_auc": 0.6782,
+    "brier": 0.1554,
+    "ks": 0.5,
+    "threshold": 0.17,
+    "confusion": {
+      "tn": 62,
+      "fp": 78,
+      "fn": 7,
+      "tp": 53
+    },
+    "recall_defaulters": 0.8833,
+    "precision_defaulters": 0.4046,
+    "cost_model": 113.0,
+    "cost_approve_all": 300.0,
+    "cost_reduction_pct": 62.3333,
+    "brier_uncalibrated": 0.1656
+  }
+}

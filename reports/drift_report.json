@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-10-05T05:05:14+00:00",
+  "rows": 300,
+  "status": "alert",
+  "score_psi": 0.3963,
+  "score_status": "alert",
+  "reject_rate": 0.8233333333333334,
+  "features": {
+    "duration": {
+      "psi": 2.4175,
+      "status": "alert"
+    },
+    "amount": {
+      "psi": 1.5237,
+      "status": "alert"
+    },
+    "employment_duration": {
+      "psi": 0.9136,
+      "status": "alert"
+    },
+    "savings": {
+      "psi": 0.2295,
+      "status": "warn"
+    },
+    "age": {
+      "psi": 0.0805,
+      "status": "ok"
+    },
+    "purpose": {
+      "psi": 0.0689,
+      "status": "ok"
+    },
+    "job": {
+      "psi": 0.0358,
+      "status": "ok"
+    },
+    "present_residence": {
+      "psi": 0.0187,
+      "status": "ok"
+    },
+    "credit_history": {
+      "psi": 0.0179,
+      "status": "ok"
+    },
+    "status": {
+      "psi": 0.0105,
+      "status": "ok"
+    },
+    "other_debtors": {
+      "psi": 0.0079,
+      "status": "ok"
+    },
+    "telephone": {
+      "psi": 0.0056,
+      "status": "ok"
+    },
+    "installment_rate": {
+      "psi": 0.0045,
+      "status": "ok"
+    },
+    "housing": {
+      "psi": 0.002,
+      "status": "ok"
+    },
+    "other_installment_plans": {
+      "psi": 0.001,
+      "status": "ok"
+    },
+    "number_credits": {
+      "psi": 0.0004,
+      "status": "ok"
+    },
+    "property": {
+      "psi": 0.0003,
+      "status": "ok"
+    },
+    "people_liable": {
+      "psi": 0.0,
+      "status": "ok"
+    }
+  },
+  "action": "Significant drift: review data pipeline and consider retraining."
+}

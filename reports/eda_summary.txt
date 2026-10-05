@@ -1,0 +1,42 @@
+rows=1000 cols=22 default_rate=0.300
+nulls=0
+
+Default rate by status:
+                                             mean  size
+status                                                 
+... < 100 DM                                0.493   274
+0 <= ... < 200 DM                           0.390   269
+... >= 200 DM / salary for at least 1 year  0.222    63
+no checking account                         0.117   394
+
+Default rate by savings:
+                             mean  size
+savings                                
+... < 100 DM                0.360   603
+100 <= ... < 500 DM         0.330   103
+unknown/no savings account  0.175   183
+500 <= ... < 1000 DM        0.175    63
+... >= 1000 DM              0.125    48
+
+Default rate by credit_history:
+                                              mean  size
+credit_history                                          
+no credits taken/all credits paid back duly  0.625    40
+all credits at this bank paid back duly      0.571    49
+existing credits paid back duly till now     0.319   530
+delay in paying off in the past              0.318    88
+critical account/other credits existing      0.171   293
+
+Default rate by purpose:
+                      mean  size
+purpose                         
+retraining           0.440    50
+furniture/equipment  0.417    12
+car (new)            0.380   234
+education            0.364    22
+others               0.351    97
+repairs              0.333    12
+radio/television     0.320   181
+domestic appliances  0.221   280
+car (used)           0.165   103
+business             0.111     9

@@ -1,0 +1,66 @@
+{
+  "rule": "approval-rate ratio vs best group must be >= 0.8",
+  "attributes": {
+    "sex": {
+      "female": {
+        "n": 61,
+        "approval_rate": 0.2786885245901639,
+        "false_reject_rate": 0.6585365853658537,
+        "default_catch_rate": 0.85,
+        "mean_pd": 0.33325281472545265,
+        "disparate_impact": 0.7449558638083228,
+        "passes_80_rule": false
+      },
+      "male": {
+        "n": 139,
+        "approval_rate": 0.37410071942446044,
+        "false_reject_rate": 0.5151515151515151,
+        "default_catch_rate": 0.9,
+        "mean_pd": 0.3071152678831251,
+        "disparate_impact": 1.0,
+        "passes_80_rule": true
+      }
+    },
+    "foreign_worker": {
+      "foreign": {
+        "n": 194,
+        "approval_rate": 0.3350515463917526,
+        "false_reject_rate": 0.5703703703703704,
+        "default_catch_rate": 0.8813559322033898,
+        "mean_pd": 0.3179454950764129,
+        "disparate_impact": 1.0,
+        "passes_80_rule": true
+      }
+    },
+    "age_group": {
+      "25-59": {
+        "n": 146,
+        "approval_rate": 0.3835616438356164,
+        "false_reject_rate": 0.5233644859813084,
+        "default_catch_rate": 0.8717948717948718,
+        "mean_pd": 0.2915412636856946,
+        "disparate_impact": 0.958904109589041,
+        "passes_80_rule": true
+      },
+      "60+": {
+        "n": 15,
+        "approval_rate": 0.4,
+        "false_reject_rate": 0.5384615384615384,
+        "default_catch_rate": 1.0,
+        "mean_pd": 0.2836075977357803,
+        "disparate_impact": 1.0,
+        "passes_80_rule": true
+      },
+      "<25": {
+        "n": 39,
+        "approval_rate": 0.17948717948717952,
+        "false_reject_rate": 0.75,
+        "default_catch_rate": 0.8947368421052632,
+        "mean_pd": 0.41534116589381753,
+        "disparate_impact": 0.4487179487179488,
+        "passes_80_rule": false
+      }
+    }
+  },
+  "all_pass": false
+}

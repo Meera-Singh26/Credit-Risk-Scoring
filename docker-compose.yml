@@ -1,0 +1,17 @@
+services:
+  api:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      API_KEY: ${API_KEY:-}          # set to require X-API-Key
+    volumes: ["./logs:/app/logs"]    # prediction log survives restarts
+  app:
+    build: .
+    command: streamlit run app/streamlit_app.py --server.port 8501 --server.address 0.0.0.0
+    ports: ["8501:8501"]
+    volumes: ["./logs:/app/logs"]
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:latest
+    command: mlflow ui --backend-store-uri sqlite:////mlruns/mlflow.db --host 0.0.0.0 --port 5000
+    ports: ["5000:5000"]
+    volumes: ["./mlruns:/mlruns"]
