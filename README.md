@@ -32,34 +32,6 @@ Predicts **probability of default** for loan applicants, converts it to a **300-
 
 CV ROC-AUC: RandomForest 0.7959, XGBoost 0.7862, LogReg 0.7719.
 
-## Quick start
-```bash
-pip install -r requirements-dev.txt
-make all            # lint + EDA + train + tests
-make api            # http://localhost:8000/docs   (set API_KEY=... to require X-API-Key)
-make app            # Streamlit dashboard
-make mlflow         # experiment tracker on :5000
-make simulate-drift # fake a recession, watch PSI alert
-docker compose up --build
-```
 
-```bash
-curl -X POST localhost:8000/score -H 'content-type: application/json' -d @example_request.json
-curl localhost:8000/monitoring/drift
-```
 
-## Layout
-```
-src/credit_risk/  config data features calibration scorecard train explain predict fairness monitor tracking report eda
-api/              FastAPI app, schemas
-app/              Streamlit (score, performance, insights, fairness & monitoring)
-scripts/          traffic / drift simulator
-tests/            data, features, scorecard, API, auth, logging, fairness, drift, registry
-.github/          CI workflow
-```
 
-## Known issues (read before presenting)
-- **Fairness audit flags two groups** (women, applicants under 25) below the 0.80 approval-ratio line, even with protected features excluded. This is proxy effect from legitimate features (status, housing, job) plus an aggressive 5:1 threshold, and groups are small (n=61, n=39). A real deployment would investigate, review the cost ratio, and get legal sign-off. See `reports/MODEL_CARD.md`.
-- **Data is tiny.** AUC CI is wide (0.7324 to 0.869); differences between top models are within noise.
-- **No reject inference,** and the data is old and German; scorecard scaling is conventional, not calibrated to a real book.
-- Drift monitoring is verified on simulated traffic, not real production data.
